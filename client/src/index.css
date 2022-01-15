@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+body {
+  margin: 0;
+  font-family: 'Heebo', sans-serif !important;
+
+}
+span{
+  font-family: 'Courgette', cursive !important;
+}
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
