@@ -24,7 +24,7 @@ const Blog = () => {
     fetchData();
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center mt-5">
         <div className="spinner-border mt-5" role="status">
@@ -32,7 +32,13 @@ const Blog = () => {
         </div>
       </div>
     );
-  if (error) return <p>Error...</p>;
+  } else if (error) {
+    return (
+      <div class="alert alert-danger text-center" role="alert">
+        <h1 className="text-dark fw-bold">ERROR...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="row">

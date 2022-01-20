@@ -12,18 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "imagetext": {
+    "title": {
       "type": "string"
     },
-    "profilpicture": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
+    "date": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

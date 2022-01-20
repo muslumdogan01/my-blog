@@ -13,3 +13,8 @@ span{
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+#profile_photo{
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+}

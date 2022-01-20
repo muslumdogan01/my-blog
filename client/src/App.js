@@ -5,6 +5,8 @@ import Home from "./Pages/Home";
 import Category from "./Pages/Category";
 import Detail from "./Pages/Detail";
 import Blog from "./Pages/Blog";
+import Works from "./Pages/Works";
+import WorksDetail from "./Components/WorksDetail";
 
 function App() {
   return (
@@ -12,15 +14,18 @@ function App() {
       <header>
         <Header />
       </header>
- 
-        <Routes>
-          <Route path="Home" element={<Home />} />
+
+      <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route  path="Home" element={<Home />} />
           <Route path="Blog" element={<Blog />} />
           <Route path="Category/:id" element={<Category />} />
           <Route path="Detail/:id" element={<Detail />} />
+          <Route path="Works" element={<Works />} />
+          <Route path="WorksDetail/:id" element={<WorksDetail />} />
         </Routes>
-     
-    </div>
+      </div>
+
   );
 }
 

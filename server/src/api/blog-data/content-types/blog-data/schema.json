@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_datas",
+  "info": {
+    "singularName": "blog-data",
+    "pluralName": "blog-datas",
+    "displayName": "blog-data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profileTextFirst": {
+      "type": "string"
+    },
+    "profileSubHeader": {
+      "type": "text"
+    },
+    "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "profileSecontText": {
+      "type": "string"
+    }
+  }
+}

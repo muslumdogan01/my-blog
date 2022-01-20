@@ -12,7 +12,6 @@ const Header = () => {
       setLoading(true);
       try {
         const result = await axios.get("http://localhost:1337/api/categories");
-        console.log("categori", result.data.data);
         setCategories(result.data.data);
         setLoading(false);
       } catch (error) {
@@ -23,6 +22,8 @@ const Header = () => {
 
     fetchData();
   }, []);
+
+  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,9 +59,9 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page">
+            <Link to="/Works" className="nav-link active" aria-current="page">
                 Works
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item dropdown">

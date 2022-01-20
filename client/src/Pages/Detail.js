@@ -14,7 +14,7 @@ const Detail = () => {
       try {
         const res = await axios.get(`http://localhost:1337/api/blogs/${id}`);
         setResult(res.data.data.attributes);
-        //console.log(res.data.data);
+        
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -23,7 +23,7 @@ const Detail = () => {
     fetchData();
   }, [id]);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center mt-5">
         <div className="spinner-border mt-5" role="status">
@@ -31,7 +31,13 @@ const Detail = () => {
         </div>
       </div>
     );
-  if (error) return <p>Error...</p>;
+  } else if (error) {
+    return (
+      <div class="alert alert-danger text-center" role="alert">
+        <h1 className="text-dark fw-bold">ERROR...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="card-group p-3" key={result.id}>

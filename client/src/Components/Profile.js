@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 const Profile = () => {
   const [profile, setProfile] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,10 +11,20 @@ const Profile = () => {
       setLoading(true);
       try {
         const profileResult = await axios.get(
-          "http://localhost:1337/api/upload/files"
+          "http://localhost:1337/api/blog-data/?populate=profileImage"
         );
-        console.log("home", profileResult.data[0]);
-        setProfile(profileResult.data[0]);
+        console.log(
+          "home",
+          profileResult.data.data.attributes.profileImage.data.attributes.url
+        );
+
+   
+        const newData = {
+          ...profileResult.data.data.attributes,
+          profileImage: `http://localhost:1337${profileResult.data.data.attributes.profileImage.data.attributes.url}`,
+        };
+        // console.log(`newData`, newData);
+        setProfile(newData);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -25,28 +34,33 @@ const Profile = () => {
     fetchData();
   }, []);
 
+
+
   return (
     <div className="container ">
       <div className="row ">
         <div className="col-md-6 p-3 p-md-5 ">
-          <h1 className="">
-            Hi, I am Müslüm, <br /> Creative Technologist
+          <h1 className="fw-bold">
+            {profile.profileTextFirst} <br />
+            {profile.profileSecontText}
           </h1>
           <p>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            {profile.profileSubHeader}
           </p>
           <div>
-            <button type="button" class="btn btn-danger btn-md">
+            <button type="button" className="btn btn-danger btn-md">
               Download Resume
             </button>
           </div>
         </div>
         <div className="col-md-6 d-flex p-5 justify-content-center align-self-center">
           <div className="text-center">
-            <img className="rounded" alt="..." />
-            naber
+            <img
+              src={profile.profileImage}
+              id="profile_photo"
+              className="img-fluid img-thumbnail"
+              alt="..."
+            />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Category = () => {
         const result = await axios.get(
           `http://localhost:1337/api/categories/${id}`
         );
-        console.log(`result`, result.data.data);
+        // console.log(`result`, result.data.data);
         setRes(result.data.data);
         setLoading(false);
       } catch (error) {
@@ -26,8 +26,21 @@ const Category = () => {
     fetchData();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>error...</p>;
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="spinner-border mt-5" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  } else if (error) {
+    return (
+      <div class="alert alert-danger text-center" role="alert">
+        <h1 className="text-dark fw-bold">ERROR...</h1>
+      </div>
+    );
+  }
 
   return (
     <div>
