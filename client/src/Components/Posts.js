@@ -46,10 +46,12 @@ const Posts = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 px-3 px-md-5 ">
-              <h6 className="text-dark fw-bold">Recent posts</h6>
+              <h6 className="text-dark fw-bold">Güncel Gönderilerim</h6>
             </div>
             <div className="col-md-6 px-3 px-md-5 ">
-              <h6 className="text-dark fw-bold text-center">View All</h6>
+              <Link to={`/Blog`}>
+              <h6 className=" fw-bold text-center link-secondary">Tümünü Gör</h6>
+              </Link>
             </div>
           </div>
           <div className="row">
@@ -57,21 +59,21 @@ const Posts = () => {
               // console.log("item :>> ", item);
               return (
                 <div className="col-md-6 p-3 p-md-5 " key={item.id}>
-                  <div className="card" style={{ width: "22rem" }}>
+                  <div className="card" id="postCard">
                     <div className="card-body">
-                      <div className="d-flex justify-content-between">
-                        <h5 className="card-title fw-bold">
+                      <div className="d-flex justify-content-between align-items-center">
+                        <h6 className="card-title fw-bold">
                           {item.attributes.title}
-                        </h5>
-                        <span className="text-muted">
-                          {item.attributes.author}
-                        </span>
+                        </h6>
+                        <h6 className="alert alert-warning">
+                          Hayata Dair
+                        </h6>
                       </div>
                       <p className="card-text">
-                        {item.attributes.body.substring(0, 250)}...
+                        {item.attributes.body.substring(0, 200)}...
                       </p>
                       <Link to={`/Detail/${item.id}`}>
-                        <a className="link-primary fw-bold">Go Detail</a>
+                        <a className="link-primary fw-bold">Devamını oku...</a>
                       </Link>
                        <div>{item.attributes.createdAt}</div>
                     </div>

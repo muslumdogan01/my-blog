@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
@@ -48,9 +50,11 @@ const Profile = () => {
             {profile.profileSubHeader}
           </p>
           <div>
+            <Link to={`/Hakkimda`}>
             <button type="button" className="btn btn-danger btn-md">
-              Download Resume
+              Hakkımda daha fazlası   <AiOutlineArrowRight /> 
             </button>
+            </Link>
           </div>
         </div>
         <div className="col-md-6 d-flex p-5 justify-content-center align-self-center">

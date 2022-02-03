@@ -23,8 +23,6 @@ const Header = () => {
     fetchData();
   }, []);
 
-  
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -44,25 +42,21 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-          <li className="nav-item">
+            <li className="nav-item">
+              <Link to="/Home" className="nav-link active" aria-current="page">
+                Anasayfa
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link
-                to="/Home"
+                to="/Hakkimda"
                 className="nav-link active"
                 aria-current="page"
               >
-                Home
+                Hakkımda
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/Blog" className="nav-link active" aria-current="page">
-                Blogs
-              </Link>
-            </li>
-            <li className="nav-item">
-            <Link to="/Works" className="nav-link active" aria-current="page">
-                Works
-              </Link>
-            </li>
+
 
             <li className="nav-item dropdown">
               <a
@@ -72,29 +66,15 @@ const Header = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Categories
+                Kategoriler
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                {categories.map((category) => {
-                  return (
-                    <div  key={category.id}>
-                      <li>
-                        <Link
-                          to={`/Category/${category.id}`}
-                          className="dropdown-item"
-                        >
-                          {category.attributes.name}
-                        </Link>
-                        <hr className="dropdown-divider"/>
-                      </li>
-                     
-                    </div>
-                  );
-                })}
-                {/* <li><a className="dropdown-item" >Action</a></li>
-                  <li><a className="dropdown-item" >Another action</a></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" >Something else here</a></li> */}
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <Link to={`/Blog`} className="dropdown-item">
+                  <a className="dropdown-item">Hayata Dair</a>
+                </Link>
+                <Link to={`/Works`} className="dropdown-item">
+                  <a className="dropdown-item">Çalışmalarım</a>
+                </Link>
               </ul>
             </li>
           </ul>

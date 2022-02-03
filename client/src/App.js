@@ -7,6 +7,7 @@ import Detail from "./Pages/Detail";
 import Blog from "./Pages/Blog";
 import Works from "./Pages/Works";
 import WorksDetail from "./Components/WorksDetail";
+import Hakkimda from "./Pages/Hakkimda";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="Detail/:id" element={<Detail />} />
           <Route path="Works" element={<Works />} />
           <Route path="WorksDetail/:id" element={<WorksDetail />} />
+          <Route path="Hakkimda" element={<Hakkimda />} />
         </Routes>
       </div>
 
