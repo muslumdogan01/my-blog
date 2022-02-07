@@ -25,6 +25,9 @@
     },
     "hobbies": {
       "type": "text"
+    },
+    "aboutHeader": {
+      "type": "string"
     }
   }
 }

@@ -11,7 +11,7 @@ const Blog = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const result = await axios.get("http://localhost:1337/api/blogs");
+        const result = await axios.get("https://myblog-strapi.herokuapp.com/api/blogs");
         console.log(result.data.data);
         setBlogs(result.data.data);
         setLoading(false);
@@ -53,7 +53,7 @@ const Blog = () => {
                 {item.attributes.body.substring(0, 100)}...
               </p>
               <Link to={`/Detail/${item.id}`}>
-                <button className="btn btn-dark">Go Detail</button>
+                <button className="btn btn-dark">Devamını oku...</button>
               </Link>
             </div>
           </div>

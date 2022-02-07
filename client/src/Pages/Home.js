@@ -9,6 +9,7 @@ const Home = () => {
       <Profile />
       <Posts />
       <Works/>
+     
     </>
   );
 };

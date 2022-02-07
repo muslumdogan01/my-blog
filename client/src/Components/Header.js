@@ -11,7 +11,7 @@ const Header = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const result = await axios.get("http://localhost:1337/api/categories");
+        const result = await axios.get("https://myblog-strapi.herokuapp.com/api/categories");
         setCategories(result.data.data);
         setLoading(false);
       } catch (error) {

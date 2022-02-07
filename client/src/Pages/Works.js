@@ -13,7 +13,7 @@ const Works = () => {
       setLoading(true);
       try {
         const workResult = await (
-          await axios.get("http://localhost:1337/api/works/?populate=workImage")
+          await axios.get("https://myblog-strapi.herokuapp.com/api/works/?populate=workImage")
         ).data;
 
         console.log("work", workResult.data);

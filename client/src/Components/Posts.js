@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { convertDate } from "../utils";
 
 const Posts = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,7 +12,7 @@ const Posts = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const postResult = await axios.get("http://localhost:1337/api/blogs");
+        const postResult = await axios.get("https://myblog-strapi.herokuapp.com/api/blogs");
         //console.log('kafası',postResult.data.data);
         setBlogs(postResult.data.data);
         setLoading(false);
@@ -75,7 +76,7 @@ const Posts = () => {
                       <Link to={`/Detail/${item.id}`}>
                         <a className="link-primary fw-bold">Devamını oku...</a>
                       </Link>
-                       <div>{item.attributes.createdAt}</div>
+                       <div>  {convertDate(item.attributes.createdAt)} </div>
                     </div>
                   </div>
                 </div>

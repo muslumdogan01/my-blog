@@ -12,7 +12,7 @@ const Detail = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:1337/api/blogs/${id}`);
+        const res = await axios.get(`https://myblog-strapi.herokuapp.com/api/blogs/${id}`);
         setResult(res.data.data.attributes);
         
         setLoading(false);

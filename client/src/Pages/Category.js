@@ -13,7 +13,7 @@ const Category = () => {
       setLoading(true);
       try {
         const result = await axios.get(
-          `http://localhost:1337/api/categories/${id}`
+          `https://myblog-strapi.herokuapp.com/api/categories/${id}`
         );
         // console.log(`result`, result.data.data);
         setRes(result.data.data);

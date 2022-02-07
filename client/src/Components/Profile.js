@@ -13,7 +13,7 @@ const Profile = () => {
       setLoading(true);
       try {
         const profileResult = await axios.get(
-          "http://localhost:1337/api/blog-data/?populate=profileImage"
+          "https://myblog-strapi.herokuapp.com/api/blog-data/?populate=profileImage"
         );
         console.log(
           "home",
@@ -23,7 +23,7 @@ const Profile = () => {
    
         const newData = {
           ...profileResult.data.data.attributes,
-          profileImage: `http://localhost:1337${profileResult.data.data.attributes.profileImage.data.attributes.url}`,
+          profileImage: `https://myblog-strapi.herokuapp.com${profileResult.data.data.attributes.profileImage.data.attributes.url}`,
         };
         // console.log(`newData`, newData);
         setProfile(newData);

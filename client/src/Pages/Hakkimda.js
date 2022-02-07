@@ -12,12 +12,12 @@ const Hakkimda = () => {
       setLoading(true);
       try {
         const result = await axios.get(
-          "http://localhost:1337/api/about/?populate=aboutpic"
+          "https://myblog-strapi.herokuapp.com/api/about/?populate=aboutpic"
         );
         console.log("hakımda", result.data.data);
         const newDataAbout = {
           ...result.data.data.attributes,
-          aboutPicture: `http://localhost:1337${result.data.data.attributes.aboutpic.data.attributes.url}`,
+          aboutPicture: `https://myblog-strapi.herokuapp.com${result.data.data.attributes.aboutpic.data.attributes.url}`,
         };
         console.log("newDataAbout", newDataAbout);
         setAbout(newDataAbout);
@@ -57,9 +57,10 @@ const Hakkimda = () => {
         </div>
         <div className="card-body">
           <h1 className="alert alert-danger">Hakkımda</h1>
-          <h4 className="card-text">{about.abouttext}</h4>
-          <h3 className="mt-3 fw-bold">Peki ya kişisel özelliklerim neler?</h3>
-          <h4 className="card-text mt-3">{about.hobbies}</h4>
+          <h4 className="card-text p-3">{about.aboutHeader}</h4>
+          <h4 className="card-text p-3">{about.abouttext}</h4>
+          <h3 className="mt-3 fw-bold p-3">Peki ya kişisel özelliklerim neler?</h3>
+          <h4 className="card-text mt-2 p-3">{about.hobbies}</h4>
         </div>
       </div>
     </div>

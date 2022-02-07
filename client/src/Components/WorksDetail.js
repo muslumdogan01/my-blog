@@ -12,7 +12,7 @@ const WorksDetail = () => {
     async function fetchDataworks() {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:1337/api/works/${id}`);
+        const res = await axios.get(`https://myblog-strapi.herokuapp.com/api/works/${id}`);
         console.log("gör", res.data.data.attributes);
         setDetail(res.data.data.attributes);
 
