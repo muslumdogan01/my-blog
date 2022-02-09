@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Routes, Route, Outlet, Link } from "react-router-dom";
-// import { withDomain } from "../utils/index";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { withDomain } from "../utils/index";
 
 const Works = () => {
   const [featureItems, setFeatureItems] = useState([]);
@@ -53,7 +53,7 @@ const Works = () => {
         >
           Works
         </h1>
-        {/* {featureItems.map((item) => (
+        {featureItems.map((item) => (
           <div
             className="card mb-3 d-flex pb-5 border-0 border-bottom "
             style={{ maxWidth: "1000px" }}
@@ -84,7 +84,7 @@ const Works = () => {
               </div>
             </div>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
