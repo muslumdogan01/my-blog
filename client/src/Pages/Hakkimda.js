@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { withDomain } from "../utils";
+
 
 const Hakkimda = () => {
   const [about, setAbout] = useState([]);
