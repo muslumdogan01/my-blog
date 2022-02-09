@@ -46,8 +46,8 @@ const Blog = () => {
         return (
           <div className="card text-center" key={item.id}>
             <div className="card-body p-5">
-            {/* <h5 className="card-title mb-3">{item.attributes.title}</h5>
-              <h3 className="card-title mb-3">{item.attributes.author}</h3> */}
+            <h5 className="card-title mb-3">{item.attributes.title}</h5>
+              <h3 className="card-title mb-3">{item.attributes.author}</h3>
               
               <p className="card-text mb-3">
                 {item.attributes.body.substring(0, 100)}...
