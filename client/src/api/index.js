@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-let baseURL = 'http://localhost:1337'
+let baseURL = 'https://myblog-strapi.herokuapp.com'
 
 const client = Axios.create({
   baseURL,
