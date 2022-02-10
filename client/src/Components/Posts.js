@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import client from "../api";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ const Posts = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const postResult = await axios.get("https://myblog-strapi.herokuapp.com/api/blogs");
+        const postResult = await client.get("/api/blogs");
         //console.log('kafası',postResult.data.data);
         setBlogs(postResult.data.data);
         setLoading(false);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import client from "../api";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,7 +11,7 @@ const Blog = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const result = await axios.get("https://myblog-strapi.herokuapp.com/api/blogs");
+        const result = await client.get("/api/blogs");
         console.log(result.data.data);
         setBlogs(result.data.data);
         setLoading(false);

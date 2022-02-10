@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
+import client from "../api";
 
 const Hakkimda = () => {
   const [about, setAbout] = useState([]);
@@ -11,13 +10,12 @@ const Hakkimda = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const result = await axios.get(
-          "https://myblog-strapi.herokuapp.com/api/about/?populate=aboutpic"
+        const result = await client.get(
+          "/api/about/?populate=aboutpic"
         );
         console.log("hakımda", result.data.data);
         const newDataAbout = {
-          ...result.data.data.attributes,
-          aboutPicture: `https://myblog-strapi.herokuapp.com${result.data.data.attributes.aboutpic.data.attributes.url}`,
+          ...result.data.data.attributes
         };
         console.log("newDataAbout", newDataAbout);
         setAbout(newDataAbout);
@@ -53,7 +51,8 @@ const Hakkimda = () => {
         style={{ maxWidth: "100%" }}
       >
         <div className="card-header text-center">
-        <img src={about.aboutPicture} alt="" style={{ maxWidth: "30%" }}/>
+        <img src="https://raw.githubusercontent.com/muslumdogan01/my-blog/master/client/public/images/mus.jpeg" alt="" style={{ maxWidth: "30%" }}/>
+    
         </div>
         <div className="card-body">
           <h1 className="alert alert-danger">Hakkımda</h1>

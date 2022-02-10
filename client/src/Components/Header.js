@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import client from "../api";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const result = await axios.get("https://myblog-strapi.herokuapp.com/api/categories");
+        const result = await client.get("/api/categories");
         setCategories(result.data.data);
         setLoading(false);
       } catch (error) {

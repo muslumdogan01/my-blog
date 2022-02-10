@@ -28,6 +28,9 @@
     },
     "aboutHeader": {
       "type": "string"
+    },
+    "deneme": {
+      "type": "richtext"
     }
   }
 }

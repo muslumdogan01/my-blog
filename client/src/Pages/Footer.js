@@ -20,19 +20,19 @@ const Footer = () => {
           </div>
 
           <div>
-            <a target={"_blank"} href="https://www.facebook.com/muslumdogan01/" className="me-4 text-reset">
+            <a target={"_blank"} href="https://www.facebook.com/muslumdogan01/" className="me-4  link-primary">
               <RiFacebookFill/>
             </a>
-            <a target={"_blank"} href="https://twitter.com/muslum_dogann" className="me-4 text-reset">
+            <a target={"_blank"} href="https://twitter.com/muslum_dogann" className="me-4 link-info">
               <AiOutlineTwitter/>
             </a>
-            <a target={"_blank"} href="https://www.instagram.com/muslummdogan/" className="me-4 text-reset">
+            <a target={"_blank"} href="https://www.instagram.com/muslummdogan/" className="me-4 link-danger">
               <AiOutlineInstagram/>
             </a>
             <a target={"_blank"} href="https://github.com/muslumdogan01" className="me-4 text-reset">
                 <AiOutlineGithub/>
             </a>
-            <a target={"_blank"} href="https://www.linkedin.com/in/muslumdogan01/" className="me-4 text-reset">
+            <a target={"_blank"} href="https://www.linkedin.com/in/muslumdogan01/" className="me-4 link-primary">
                 <AiFillLinkedin/>
             </a>
           </div>
@@ -46,9 +46,7 @@ const Footer = () => {
                   <i className="fas fa-gem me-3"></i> MÜSLÜM DOĞAN
                 </h6>
                 <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
+                Herkesi mutlu edemezsin çünkü sen pizza değilsin :)
                 </p>
               </div>
 
@@ -122,10 +120,10 @@ const Footer = () => {
           className="text-center p-4"
           style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}
         >
-          © 2021 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
+          © 2022 Copyright:
+          <h7 className="text-reset fw-bold">
+            Tüm Hakları Saklıdır.
+          </h7>
         </div>
       </footer>
     </>

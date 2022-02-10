@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import client from "../api";
 
 const Detail = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const Detail = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        const res = await axios.get(`https://myblog-strapi.herokuapp.com/api/blogs/${id}`);
+        const res = await client.get(`/api/blogs/${id}`);
         setResult(res.data.data.attributes);
         
         setLoading(false);

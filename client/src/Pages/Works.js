@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import client from "../api";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import { withDomain } from "../utils/index";
+// import { withDomain } from "../utils/index";
+
 
 const Works = () => {
   const [featureItems, setFeatureItems] = useState([]);
@@ -13,7 +14,7 @@ const Works = () => {
       setLoading(true);
       try {
         const workResult = await (
-          await axios.get("https://myblog-strapi.herokuapp.com/api/works/?populate=workImage")
+          await client.get("/api/works/?populate=workImage")
         ).data;
 
         console.log("work", workResult.data);
@@ -61,13 +62,15 @@ const Works = () => {
           >
             <div className="row g-0 d-flex justify-content-center align-items-center ">
               <div className="col-md-4">
-                <img
+                {/* <img
                   src={withDomain(
                     item.attributes.workImage.data.attributes.url
                   )}
                   className="img-fluid rounded-start"
                   alt="..."
-                />
+                /> */}
+                <img src="https://raw.githubusercontent.com/muslumdogan01/my-blog/master/client/public/images/WORKS_plain.png" 
+                 className="img-thumbnail border-0 "/>
               </div>
               <div className="col-md-8">
                 <div className="card-body">
