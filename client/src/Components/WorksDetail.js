@@ -36,7 +36,7 @@ const WorksDetail = () => {
               <p>{detail.description}</p>
               <footer class="blockquote-footer">
                 <p>{detail.name}</p>
-                <a className="link-primary" href="https://github.com/muslumdogan01/Twitter-clone-with-tailwindCss">Twitter Klonu Projesi</a>
+                <a className="link-primary" href="https://github.com/muslumdogan01?tab=repositories">GitHub adresimdeki Twitter Klonu Projesi</a>
               </footer>
             </blockquote>
           </div>
